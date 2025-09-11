@@ -1,0 +1,18 @@
+  {% load static %}
+   <nav>
+      <h1>HeroNet Cyber</h1>
+      <img src="images/logo.svg" alt="" />
+      <div class="navigation">
+        <ul>
+          <i id="menu-close" class="fas fa-times"></i>
+          <li><a href="{% url 'home' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href=" ">Shop</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+        <img id="menu-btn" src="{% static 'images/menu.png' %}" alt="" />
+      </div>
+    </nav>

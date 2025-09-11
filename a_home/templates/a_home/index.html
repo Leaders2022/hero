@@ -1,0 +1,54 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block content %}
+
+  <main class="layout-layout--2">
+      <div class="container">
+
+    <!-- navigation -->
+    {% include 'includes/navbar.html' %}
+
+    <!-- navigation -->
+
+    <!-- home -->
+    <section id="home">
+      <h2>The Future is Here</h2>
+      <p>
+        The questions of today will not be answered by speeches and resolutions, but with iron and blood.
+        Don't tell us what you can do. Do it.
+      </p>
+      <div class="btn">
+        <a class="blue" href="contact.html">Get a Quote</a>
+        <a class="yellow" href="course.html">Visit Services</a>
+      </div>
+    </section>
+    <!-- home -->
+
+    <!-- features -->
+    {% include 'includes/feature_component.html' %}
+
+    <!-- features -->
+
+    <!-- courses -->
+    {% include 'includes/course_component.html' %}
+
+    <!-- courses -->
+
+    <!-- registration -->
+    {% include 'includes/register_component.html' %}
+
+    <!-- registration -->
+
+    <!-- profiles -->
+    {% include 'includes/profile_component.html' %}
+
+    <!-- profiles -->
+    <!-- trusted by -->
+
+    <!-- trusted by -->
+    {% include 'includes/trust_component.html' %}
+
+    <!-- footer -->
+          {% endblock content %}
+          </div>
+</main>

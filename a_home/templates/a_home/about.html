@@ -1,0 +1,51 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block content %}
+
+     <!-- home -->
+    <section id="about-home">
+      <h2>About HeroNet Cyber</h2>
+    </section>
+    <!-- home -->
+
+
+          <!-- about  -->
+    <section id="about-container">
+      <div class="about-img">
+        <img src="{% static 'images/a.png' %}" alt="" />
+      </div>
+      <div class="about-text">
+        <h2>
+          Welcome to Heronet Cyber, Enhance your skills with best Online courses.
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quis
+          laborum repellat maxime provident, dolores ut ad ipsum unde aliquid
+          autem, iusto ipsa labore eaque commodi dignissimos adipisci beatae
+          maiores?
+        </p>
+
+        <div class="about-fe">
+          <img src="{% static 'images/fe1.png' %}" alt="" />
+          <div class="fe-text">
+            <h5>400+ Courses</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequatur, provident.
+            </p>
+          </div>
+        </div>
+        <div class="about-fe">
+          <img src="{% static 'images/fe2.png' %}" alt="" />
+          <div class="fe-text">
+            <h5>Lifetime Access</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequatur, provident.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about  -->
+{% endblock content %}

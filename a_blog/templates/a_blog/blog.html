@@ -1,0 +1,47 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- home -->
+    <section id="about-home">
+      <h2>Blog</h2>
+    </section>
+    <!-- home -->
+
+    <section id="blog-container">
+      <div class="blogs">
+        <div class="post">
+          <img src="images/b1.jpg" alt="" />
+          <h3>Learn HTMl and CSS</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
+            explicabo consequatur suscipit perferendis quas ut. Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Repellat itaque sint
+            dolorum perferendis reiciendis explicabo.
+          </p>
+          <a href="{% url 'post' %}">Read more</a>
+        </div>
+
+
+        </div>
+      </div>
+      <div class="category">
+        <h2>Categories</h2>
+        <hr />
+        <a href="#">Web development</a>
+        <hr />
+        <a href="#">Web design</a>
+        <hr />
+        <a href="#">App development</a>
+        <hr />
+        <a href="#">Android development</a>
+        <hr />
+        <a href="#">Python Prgoramming</a>
+        <hr/>
+        <a href="#">Python Prgoramming</a>
+        <hr/>
+
+      </div>
+    </section>
+
+   {% endblock content %}

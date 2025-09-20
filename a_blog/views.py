@@ -5,4 +5,4 @@ def blog(request):
     return render(request, 'a_blog/blog.html')
 
 def post(request):
-    return render(request, 'a_blog/post.html')
+    return render(request, 'a_blog/article_page.html')

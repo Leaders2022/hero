@@ -1,47 +1,39 @@
-{% extends 'layouts/main.html' %}
-{% load static %}
+{% extends "layouts/main.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
 {% block content %}
 
-    <!-- home -->
-    <section id="about-home">
-      <h2>Blog</h2>
-    </section>
-    <!-- home -->
 
-    <section id="blog-container">
-      <div class="blogs">
-        <div class="post">
-          <img src="{% static 'images/b1.jpg' %}" alt="" />
-          <h3>Learn HTMl and CSS</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
-            explicabo consequatur suscipit perferendis quas ut. Lorem ipsum,
-            dolor sit amet consectetur adipisicing elit. Repellat itaque sint
-            dolorum perferendis reiciendis explicabo.
-          </p>
-          <a href="{% url 'post' %}">Read more</a>
-        </div>
+<section id="about-home">
+  <h2>Blog</h2>
+</section>
 
+<section id="blog-container">
+  <div class="blogs">
+    {% for post in blogpages %}
+      <div class="post">
+        {% if post.header_image %}
+          {% image post.header_image fill-400x250 as img %}
+          <img src="{{ img.url }}" alt="{{ post.title }}">
+        {% endif %}
 
-        </div>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.intro }}</p>
+        <a href="{{ post.url }}">Read more</a>
       </div>
-      <div class="category">
-        <h2>Categories</h2>
-        <hr />
-        <a href="#">Web development</a>
-        <hr />
-        <a href="#">Web design</a>
-        <hr />
-        <a href="#">App development</a>
-        <hr />
-        <a href="#">Android development</a>
-        <hr />
-        <a href="#">Python Prgoramming</a>
-        <hr/>
-        <a href="#">Python Prgoramming</a>
-        <hr/>
+    {% empty %}
+      <p>No blog posts found.</p>
+    {% endfor %}
+  </div>
 
-      </div>
-    </section>
+  <div class="category">
+    <h2>Categories</h2>
+    <hr />
+    {% for category in categories %}
+      <a href="?category={{ category.slug }}">{{ category.name }}</a>
+      <hr />
+    {% endfor %}
+  </div>
+</section>
 
-   {% endblock content %}
+{% endblock content %}

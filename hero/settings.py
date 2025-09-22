@@ -40,20 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #wagtail apps
-'wagtail.contrib.forms',
-'wagtail.contrib.redirects',
-'wagtail.embeds',
-'wagtail.sites',
-'wagtail.users',
-'wagtail.snippets',
-'wagtail.documents',
-'wagtail.images',
-'wagtail.search',
-'wagtail.admin',
-'wagtail',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
 
-'modelcluster',
-'taggit',
+    'modelcluster',
+     'taggit',
 
     #my apps
     'a_home',

@@ -1,0 +1,36 @@
+  <section id="registration">
+    <div class="reminder">
+      <p>{{ block.value.heading|default:"Get 100 online course for free" }}</p>
+      <h1>{{ block.value.cta_text|default:"Register to get it" }}</h1>
+      <div class="time">
+        <div class="date">
+          18 <br />
+          Days
+        </div>
+        <div class="date">
+          23 <br />
+          Hours
+        </div>
+        <div class="date">
+          06 <br />
+          minutes
+        </div>
+        <div class="date">
+          58 <br />
+          Seconds
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <h3>Create free account now</h3>
+      <form method="POST" action="{{ block.value.cta_link|default:'#' }}">
+        {% csrf_token %}
+        <input type="text" placeholder="Name" name="name" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="text" placeholder="Phone Number" name="phone" />
+        <div class="btn">
+          <button type="submit" class="yellow">{{ block.value.cta_text|default:"Submit Form" }}</button>
+        </div>
+      </form>
+    </div>
+  </section>

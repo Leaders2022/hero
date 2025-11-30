@@ -1,0 +1,40 @@
+{% load static wagtailimages_tags %}
+
+<!-- courses -->
+<section id="course">
+  <h1>Our popular courses</h1>
+  {% if value %}
+    <p class="lead">Explore our most popular courses.</p>
+
+    <div class="course-box">
+      {% for item in value %}
+        <div onclick="window.location.href='{{ item.value.link }}';" class="courses" style="cursor: pointer;">
+          {% if item.value.image %}
+            {% image item.value.image fill-400x250 as img %}
+            <img src="{{ img.url }}" alt="{{ item.value.title|default:'Course image' }}" />
+          {% else %}
+            <img src="{% static 'images/c1.jpg' %}" alt="{{ item.value.title|default:'Course image' }}" />
+          {% endif %}
+
+          <div class="details">
+            <span>{{ item.value.date|date:"d/m/Y"|default:"Updated 21/8/21" }}</span>
+            <h6>{{ item.value.title|default:"Untitled Course" }}</h6>
+
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>({{ item.value.reviews_count|default:"238" }})</span>
+            </div>
+          </div>
+
+          <div class="cost">{{ item.value.price|default:"$49.99" }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No courses available yet.</p>
+  {% endif %}
+</section>

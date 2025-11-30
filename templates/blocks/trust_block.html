@@ -1,0 +1,19 @@
+{% load wagtailimages_tags %}
+
+<section id="trust">
+  <h1>Trusted By</h1>
+  <p>Companies and organizations that trust our platform.</p>
+  
+  {% if value %}
+    <div class="trust-img">
+      {% for item in value %}
+        {% if item.value.logo %}
+          {% image item.value.logo fill-200x100 as logo_img %}
+          <img src="{{ logo_img.url }}" alt="{{ item.value.name }}" title="{{ item.value.name }}" />
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No trusted partners yet.</p>
+  {% endif %}
+</section>

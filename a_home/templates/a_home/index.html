@@ -1,12 +1,17 @@
 {% extends 'layouts/main.html' %}
 {% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
 {% block content %}
+
+{% for block in page.body %}
+{% include_block block %}
+  {% endfor %}
 
   <main class="layout-layout--2">
       <div class="container">
 
     <!-- navigation -->
-    {% include 'includes/navbar.html' %}
+    {% include 'blocks/navbar.html' %}
 
     <!-- navigation -->
 
@@ -25,28 +30,28 @@
     <!-- home -->
 
     <!-- features -->
-    {% include 'includes/feature_component.html' %}
+    {% include 'blocks/feature_block.html' %}
 
     <!-- features -->
 
     <!-- courses -->
-    {% include 'includes/course_component.html' %}
+    {% include 'blocks/course_block.html' %}
 
     <!-- courses -->
 
     <!-- registration -->
-    {% include 'includes/register_component.html' %}
+    {% include 'blocks/register_block.html' %}
 
     <!-- registration -->
 
     <!-- profiles -->
-    {% include 'includes/profile_component.html' %}
+    {% include 'blocks/profile_block.html' %}
 
     <!-- profiles -->
     <!-- trusted by -->
 
     <!-- trusted by -->
-    {% include 'includes/trust_component.html' %}
+    {% include 'blocks/trust_block.html' %}
 
     <!-- footer -->
           {% endblock content %}

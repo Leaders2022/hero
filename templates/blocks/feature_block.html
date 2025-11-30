@@ -1,0 +1,9 @@
+<section class="features">
+  {% for item in value %}
+    <div class="feature">
+      {% if item.icon %}<img src="{{ item.icon.url }}" alt="{{ item.title }}">{% endif %}
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  {% endfor %}
+</section>

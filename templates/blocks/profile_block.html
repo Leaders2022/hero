@@ -1,0 +1,36 @@
+{% load wagtailimages_tags %}
+
+<section id="experts">
+  <h1>Community Experts</h1>
+  <p>Meet our team of experienced professionals.</p>
+  
+  {% if value %}
+    <div class="expert-box">
+      {% for item in value %}
+        <div class="profile">
+          {% if item.value.image %}
+            {% image item.value.image fill-300x300 as profile_img %}
+            <img src="{{ profile_img.url }}" alt="{{ item.value.name }}" />
+          {% else %}
+            <img src="./images/pro1.webp" alt="{{ item.value.name }}" />
+          {% endif %}
+          
+          <h6>{{ item.value.name }}</h6>
+          <p>{{ item.value.role|default:"Expert" }}</p>
+          
+          {% if item.value.bio %}
+            <p class="bio">{{ item.value.bio }}</p>
+          {% endif %}
+          
+          <div class="pro-links">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No profiles available yet.</p>
+  {% endif %}
+</section>
